@@ -4,7 +4,6 @@ from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 import datetime
 import pandas
-import pprint
 import collections
 
 
@@ -18,7 +17,6 @@ template = env.get_template('template.html')
 year_of_foundation = 2010
 now_year = datetime.datetime.now().year
 age = now_year - year_of_foundation
-
 
 prelast_number = age//10%10
 last_number = age%10

@@ -126,34 +126,31 @@
             <p>Выпечка и десерты — это не просто еда, это поэзия вкуса, искусство, сотканное из ароматов, тепла и заботы. С древних времён, с первого очага, где человек научился превращать простое тесто в хлеб, началась история кулинарного чуда, которое согревает сердца и объединяет поколения.</p>
           </div>
         </div>
-          <div class="row">
-            <div class="col-12 section-title text-center mb-5">
-            {% for category, bakeries in bakeries_products.items() %}
-              <h2 class="d-block">{{category}}</h2>
         <div class="row">
-        {% for item in bakeries %}
-          <div class="col-lg-4 mb-5 col-md-6">
-            <div class="wine_v_1 text-center pb-4 pt-5">
-              <img src="project/build/img/{{ item.Картинка }}" alt="Image" class="img-fluid" width="350" height="280">
-            {% if item.Акция %}
-              <img src="project/build/img/profitable.png" style="width:10rem;height: 10rem;position:absolute;right: -20px;top: -20px;">
-            {% endif %}
-              <div>
-                <h3 class="heading mt-3 mb-3 text-dark">{{ item.Название }}</h3>
-                <p>
-                  {% if item.Сорт_муки %}
-                  Сорт муки - {{ item.Сорт_муки }}<br/>
-                  {% endif %}
-                  <span class="price">{{ item.Цена }} р.</span>
-                </p>
+          <div class="col-12 section-title text-center mb-5">
+            {% for category, bakeries in bakeries_products.items() %}
+            <h2 class="d-block">{{category}}</h2>
+            <div class="row">
+              {% for item in bakeries %}
+              <div class="col-lg-4 mb-5 col-md-6">
+                <div class="wine_v_1 text-center pb-4 pt-5">
+                  <img src="project/build/img/{{ item.Картинка }}" alt="Image" class="img-fluid" width="350" height="280"> {% if item.Акция %}
+                  <img src="project/build/img/profitable.png" style="width:10rem;height: 10rem;position:absolute;right: -20px;top: -20px;"> {% endif %}
+                  <div>
+                    <h3 class="heading mt-3 mb-3 text-dark">{{ item.Название }}</h3>
+                    <p>
+                      {% if item.Сорт_муки %} Сорт муки - {{ item.Сорт_муки }}
+                      <br/> {% endif %}
+                      <span class="price">{{ item.Цена }} р.</span>
+                    </p>
+                  </div>
+                </div>
               </div>
+              {% endfor %}
             </div>
-          </div>
-        {% endfor %}
-        </div>
             {% endfor %}
-            </div>
           </div>
+        </div>
       </div>
     </div>
 </section>
